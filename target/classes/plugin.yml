@@ -1,0 +1,7 @@
+name: PandaCommandCore
+version: 1.0.0
+description: Core Plugin For Command Control
+authors: [Closeplanet2]
+main: com.closeplanet2.pandacommandcore.PandaCommandCore
+depend: [PandaVariableCore, PandaSpigotCore]
+api-version: 1.20
