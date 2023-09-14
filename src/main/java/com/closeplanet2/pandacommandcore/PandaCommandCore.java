@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.zip.ZipInputStream;
 
+//TODO Create console command
+
 public class PandaCommandCore extends JavaPlugin {
     public static void Register(JavaPlugin javaPlugin, String path) throws Exception {
         var full_data = ReturnAllClasses(javaPlugin, path);

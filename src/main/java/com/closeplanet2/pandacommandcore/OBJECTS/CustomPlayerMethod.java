@@ -33,7 +33,6 @@ public class CustomPlayerMethod {
     }
 
     public PlayerCommandError TryAndInvokeMethod(Player player, String[] player_args){
-        Bukkit.broadcastMessage(ChatColor.RED + method.getName());
 
         var command_sig = SignatureBuilder.RETURN_SIGNATURE(method);
         var method_param = method.getParameterTypes();
@@ -44,21 +43,15 @@ public class CustomPlayerMethod {
         if(!(player_args.length >= (command_sig.size() + method_param.length - 1)) && is_last_param_array)
             return PlayerCommandError.COMMAND_CANNOT_BE_INVOKED_WITH_PROVIDED_ARGUMENTS;
 
-        Bukkit.broadcastMessage(ChatColor.GREEN + "1");
-
         var expected_types = new ArrayList<String>();
         var expected_data_types = new ArrayList<Class<?>>();
         var invoke_args = new ArrayList<>();
         invoke_args.add(player.getUniqueId());
 
-        Bukkit.broadcastMessage(ChatColor.GREEN + "2");
-
         for(var x : command_sig){
             expected_types.add(StaticString.CASE(x, false, toLower));
             expected_data_types.add(String.class);
         }
-
-        Bukkit.broadcastMessage(ChatColor.GREEN + "3");
 
         for(var x : method_param){
             if(x != UUID.class){
@@ -66,8 +59,6 @@ public class CustomPlayerMethod {
                 expected_data_types.add(x);
             }
         }
-
-        Bukkit.broadcastMessage(ChatColor.GREEN + "4");
 
         //ConsoleAPI.LINE();
         for(var i = 0; i < expected_data_types.size(); i++){
@@ -90,8 +81,6 @@ public class CustomPlayerMethod {
                 }
             }
         }
-
-        Bukkit.broadcastMessage(ChatColor.GREEN + "5");
 
         try {
             playerCommand.InvokeVoid(method, invoke_args.toArray(new Object[0]));
