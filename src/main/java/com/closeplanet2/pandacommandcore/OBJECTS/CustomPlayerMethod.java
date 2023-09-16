@@ -34,6 +34,10 @@ public class CustomPlayerMethod {
 
     public PlayerCommandError TryAndInvokeMethod(Player player, String[] player_args){
 
+        if(!CanPlayerUseCommand(player)){
+            return PlayerCommandError.PLAYER_COMMANDS_LOCKED;
+        }
+
         var command_sig = SignatureBuilder.RETURN_SIGNATURE(method);
         var method_param = method.getParameterTypes();
 
@@ -180,7 +184,7 @@ public class CustomPlayerMethod {
     }
 
     public boolean CanPlayerUseCommand(Player player){
-        if(!PlayerAPI.GET_TOGGLE_STAT(player, TOGGLE_ACTIONS.COMMANDS)) return false;
+        if(!PlayerAPI.GET_TOGGLE_STAT(player, TOGGLE_ACTIONS.PlayerCommandSendEvent)) return false;
         if(method.isAnnotationPresent(PCOP.class) && !player.isOp()) return false;
         if(method.isAnnotationPresent(PCPerm.class))
             if(!PlayerAPI.TEST_PERMISSIONS(player, method.getAnnotation(PCPerm.class).value())) return false;
