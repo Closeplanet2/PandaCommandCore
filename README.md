@@ -19,15 +19,15 @@
 # Maven
 ```
 <repository>
-    <id>pandaconfigcore</id>
-    <url>https://maven.pkg.github.com/closeplanet2/PandaConfigCore</url>
+    <id>pandacommandcore</id>
+    <url>https://maven.pkg.github.com/closeplanet2/PandaCommandCore</url>
 </repository>
 ```
 ```
 <dependency>
-    <groupId>com.closeplanet2</groupId>
-    <artifactId>pandaconfigcore</artifactId>
-    <version>1.0.0-beta</version>
+  <groupId>com.closeplanet2</groupId>
+  <artifactId>pandacommandcore</artifactId>
+  <version>1.0.0-beta</version>
 </dependency>
 ```
 **
