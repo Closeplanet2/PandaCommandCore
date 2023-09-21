@@ -5,7 +5,7 @@
 </h2>
 
 **Downloads:**
-- [All Downloads](https://github.com/Closeplanet2/PandaConfigCore/releases)
+- [All Downloads](https://github.com/Closeplanet2/PandaCommandCore/releases)
 
 **Tested Versions:**
 - 1.20.1-R0.1-SNAPSHOT
